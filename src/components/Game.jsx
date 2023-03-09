@@ -1,12 +1,12 @@
 import ImageContainer from "./ImageContainer"
-import Response from "./Response"
+import Answer from "./Answer"
 
 function Game() {
   return (
     <>
-    <div>REACT GAME!</div>
+    <div className="w-full">REACT GAME!</div>
     <ImageContainer />
-    <Response />
+    <Answer />
     </>
   )
 }

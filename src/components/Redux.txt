@@ -1,0 +1,18 @@
+Redux Toolkit will manage state for the app game!
+
+For doing it, it`s necessary to take into account the following:
+
+1.- Game state
+2.- Score state
+3.- Level state
+
+
+1.- Game state for last challenge:
+
+const challenge = {
+    "level": 1,
+    "number": x,
+    "imageURL": ["4 images"],
+    "imageContent": ["men exercising", "woman riding"]
+    "answer": "correct answer goes here!"
+}

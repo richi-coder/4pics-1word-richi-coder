@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Game from "../components/Game";
 import Header from "../components/Header.astro";
+import App from "../components/App";
 ---
 
 <Layout title="4pics-1word">
+  <div class="flex flex-col items-center bg-gray-900 text-white w-full">
     <Header />
   <div>This page will contain the game!</div>
-  <Game />
+  <App client:load />
+  </div>
 </Layout>

@@ -1,6 +1,8 @@
-function Image({content}) {
+function Image({url}) {
   return (
-    <div>{content}</div>
+    <>
+    <img src={url} alt="" className="w-100" />
+    </>
   )
 }
 
