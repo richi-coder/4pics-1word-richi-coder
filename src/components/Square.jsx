@@ -8,15 +8,15 @@ function Square(props) {
     const challenge = useSelector(state => state.challenge);
     const answer = useSelector(state => state.answer);
     const { element, dashPos } = props
-    //alert(element)
     const dispatch = useDispatch();
     function handleSquareClick() {
+      if (element !== null ) {
         dispatch(removeLetter({
           id: dashPos,
           letter: element.letter
         }))
         dispatch(updatePuzzleFill(element))
-        dispatch(changeAdding(true))
+        dispatch(changeAdding(true))}
     }
   return (
     <button
