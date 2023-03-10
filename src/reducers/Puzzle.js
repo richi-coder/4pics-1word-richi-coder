@@ -1,22 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    level: 1,
-    number: 5,
-    imageURL: ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_1.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_2.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_3.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_4.jpg"],
-    imageContent: ["gymnastics", "horse", "woman and horse", "wooden horse for kids"],
-    answer: "horse"
+    number: 2,
+    imageURL: ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_1.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_2.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_3.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_4.jpg"],
+    answer: "ice",
+    puzzleString: "RCCEMAEIWTRS",
+    puzzle: []
 }
 
 const puzzleSlice = createSlice({
     name: "challenge",
     initialState,
     reducers: {
-        addAnswer(state, action) {
-            return ["hi", "how", "are", "you"]
+        createPuzzle(state, action) {
+            state.puzzle = state.puzzle.concat(action.payload)
+        },
+        updatePuzzle(state, action) {
+            
         }
     }
 })
 
-export const { addAnswer } = puzzleSlice.actions;
+export const { createPuzzle } = puzzleSlice.actions;
 export default puzzleSlice.reducer;

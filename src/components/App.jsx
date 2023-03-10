@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
+import Dashboard from '../reducers/Dashboard'
 import Puzzle from '../reducers/Puzzle'
 import Game from './Game'
 
 function App() {
     const store = configureStore({
         reducer: {
-            challenge: Puzzle
+            challenge: Puzzle,
+            answer: Dashboard,
         }
     })
     

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 
 function Answer() {
-  const challenge = useSelector(state => state.challenge);
-  const answer = challenge.answer;
+  const puzzle = useSelector(state => state.challenge);
+  const answer = puzzle.answer;
   const [response, setResponse] = useState("Response");
   const [correct, setCorrect] = useState(false)
 
@@ -18,9 +18,10 @@ function Answer() {
 
   return (
     <>
-    <div >GAME ANSWER GOES HERE!</div>
     
     <form onSubmit={(e) => handleSubmit(e)}>
+
+
     <label htmlFor="input">
     <input id='input' onChange={(e) => setResponse(e.target.value)} type="text" className='text-black' />
     </label>

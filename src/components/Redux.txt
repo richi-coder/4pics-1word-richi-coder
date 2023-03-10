@@ -5,6 +5,7 @@ For doing it, it`s necessary to take into account the following:
 1.- Game state
 2.- Score state
 3.- Level state
+4.- Keyboard state
 
 
 1.- Game state for last challenge:
@@ -16,3 +17,32 @@ const challenge = {
     "imageContent": ["men exercising", "woman riding"]
     "answer": "correct answer goes here!"
 }
+
+4.- Keyboard state:
+
+answer = H O R S E (5 letters);
+min 3 letters words
+max 9 letters words
+
+Keyboard contains 12 letters
+
+- First:
+baseArray = new Array(12).fill(0);
+
+  0  |  0  |  0  |  0  |  0  |  0  |
+-----|-----|-----|-----|-----|-----|
+  0  |  0  |  0  |  0  |  0  |  0  |
+
+- Second:
+// Divide 12 spaces / answer.length
+Step = 12 / 5
+Step = 2.4 = 2 or 3
+
+- Third:
+//Decide initial
+// 
+
+
+  E  |     |     |  S  |     |     |
+-----|-----|-----|-----|-----|-----|
+  O  |     |     |  R  |     |  H  |
