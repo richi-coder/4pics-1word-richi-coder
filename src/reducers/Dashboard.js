@@ -14,7 +14,6 @@ const dashboardSlice = createSlice({
         },
         addLetter(state, action) {
             const index = state.dashboardResponse.indexOf(null)
-            console.log(index, "INDEEEX")
             if (index === -1) return
             state.dashboardResponse[index] = action.payload
         },
@@ -25,7 +24,7 @@ const dashboardSlice = createSlice({
             }
         },
         removeLetter(state, action) {
-            alert(state.dashboardResponse)
+            state.dashboardResponse[action.payload.id] = null
         }
     }
 })

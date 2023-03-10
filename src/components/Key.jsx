@@ -16,7 +16,7 @@ function Key({ letter = null, id }) {
         //if (answer.add) {
         //let gameCondition = checkWin(challenge, answer);
         //dispatch(changeAdding(gameCondition))
-        dispatch(addLetter(letter))
+        dispatch(addLetter({id, letter}))
         dispatch(updatePuzzleNull({letter, id}))
         //}        
     }

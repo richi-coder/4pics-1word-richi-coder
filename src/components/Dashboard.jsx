@@ -21,7 +21,7 @@ function Dashboard() {
     <div className='flex flex-row gap-x-2 m-auto'>
         {
             answer.map((letter,i) => 
-                <Square letter={testing[i]} />
+                <Square element={testing[i]} dashPos={i} />
             )
         }
         

@@ -17,9 +17,12 @@ const puzzleSlice = createSlice({
         },
         updatePuzzleNull(state, action) {
             state.puzzle[action.payload.id] = null
+        },
+        updatePuzzleFill(state, action) {
+            state.puzzle[action.payload.id] = action.payload.letter;
         }
     }
 })
 
-export const { createPuzzle, updatePuzzleNull } = puzzleSlice.actions;
+export const { createPuzzle, updatePuzzleNull, updatePuzzleFill} = puzzleSlice.actions;
 export default puzzleSlice.reducer;
