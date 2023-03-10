@@ -1,13 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { initializeDashboard } from '../reducers/Dashboard';
 import Square from './Square';
 
 function Dashboard() {
+    const dispatch = useDispatch();
     const challenge = useSelector(state => state.challenge);
     const testing = useSelector(state => state.answer);
     const answer = challenge.answer.split("");
-    //alert(answer)
-  return (
+
+    useEffect(() => {
+        
+        dispatch(initializeDashboard(answer))
+        
+    }, [challenge])
+    
+
+    return (
     <div className='flex flex-row gap-x-2 m-auto'>
         {
             answer.map((letter,i) => 

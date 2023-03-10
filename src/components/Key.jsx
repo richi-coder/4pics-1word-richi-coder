@@ -15,11 +15,11 @@ function Key({element = { id: "", letter: null}}) {
 
     const handleKeyClick = () => {
         if (answer.add) {
-        let gameCondition = (checkWin(challenge, answer));
+        let gameCondition = checkWin(challenge, answer);
         dispatch(changeAdding(gameCondition))
         dispatch(addLetter(letter))
-        dispatch(updatePuzzleNull(element))}
-        
+        dispatch(updatePuzzleNull(element))
+        }        
     }
   
   return (

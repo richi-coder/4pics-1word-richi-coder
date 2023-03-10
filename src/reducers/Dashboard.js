@@ -1,4 +1,4 @@
-import { createSlice, removeListener } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     add: true,
@@ -9,6 +9,9 @@ const dashboardSlice = createSlice({
     name: "answer",
     initialState,
     reducers: {
+        initializeDashboard(state, action) {
+            //state.dashboardResponse = action.payload
+        },
         addLetter(state, action) {
             state.dashboardResponse.push(action.payload)
         },
@@ -17,15 +20,12 @@ const dashboardSlice = createSlice({
                 ...state,
                 add: action.payload
             }
-        }
-        /*
+        },
         removeLetter(state, action) {
-
-            const index = state.puzzle.indexOf(action.payload)
-            state.puzzle[in] = ""
-        }*/
+            alert(state.dashboardResponse)
+        }
     }
 })
 
-export const { addLetter, removeLetter, changeAdding } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard } = dashboardSlice.actions;
 export default dashboardSlice.reducer;
