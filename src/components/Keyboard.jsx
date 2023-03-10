@@ -6,11 +6,12 @@ import Key from './Key'
 function Keyboard() {
     const dispatch = useDispatch();
     const readChallenge = useSelector(state => state.challenge);
-    const challenge = readChallenge.puzzleString.split("");
-    let puzzleFirst = challenge.slice(0);
+    const challengePuzzle = readChallenge.puzzleString.split("");
+    const puzzle = readChallenge.puzzle;
 
     useEffect(() => {
-        dispatch(createPuzzle(challenge))
+        let puzzleToSave = challengePuzzle.map((letter, i) => ({id: i, letter}))
+        dispatch(createPuzzle(puzzleToSave))
     }, [])
     
 
@@ -18,7 +19,7 @@ function Keyboard() {
     <div className='flex flex-col items-center justify-center m-auto gap-y-2 w-full'>
     <div className='flex items-center justify-center flex-row flex-wrap gap-2 align' style={{width: "50vw"}}>
         {
-            puzzleFirst.map(letter => <Key letter={letter} />)
+            puzzle.map(obj => <Key element={obj} />)
         }
         
     </div>

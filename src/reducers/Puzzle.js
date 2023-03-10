@@ -13,13 +13,16 @@ const puzzleSlice = createSlice({
     initialState,
     reducers: {
         createPuzzle(state, action) {
-            state.puzzle = state.puzzle.concat(action.payload)
+            state.puzzle = action.payload;
         },
-        updatePuzzle(state, action) {
-            
+        updatePuzzleNull(state, action) {
+            state.puzzle[action.payload.id] = {
+                ...state.puzzle[action.payload.id],
+                letter: null
+            }
         }
     }
 })
 
-export const { createPuzzle } = puzzleSlice.actions;
+export const { createPuzzle, updatePuzzleNull } = puzzleSlice.actions;
 export default puzzleSlice.reducer;

@@ -8,10 +8,12 @@ const dashboardSlice = createSlice({
     reducers: {
         addLetter(state, action) {
             state.push(action.payload)
-        },
+        },/*
         removeLetter(state, action) {
-            state[action.payload.i] = ""
-        }
+
+            const index = state.puzzle.indexOf(action.payload)
+            state.puzzle[in] = ""
+        }*/
     }
 })
 
