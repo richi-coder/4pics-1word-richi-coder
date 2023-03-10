@@ -16,10 +16,7 @@ const puzzleSlice = createSlice({
             state.puzzle = action.payload;
         },
         updatePuzzleNull(state, action) {
-            state.puzzle[action.payload.id] = {
-                ...state.puzzle[action.payload.id],
-                letter: null
-            }
+            state.puzzle[action.payload.id] = null
         }
     }
 })

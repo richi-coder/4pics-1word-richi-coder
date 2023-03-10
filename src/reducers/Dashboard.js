@@ -10,10 +10,13 @@ const dashboardSlice = createSlice({
     initialState,
     reducers: {
         initializeDashboard(state, action) {
-            //state.dashboardResponse = action.payload
+            state.dashboardResponse = action.payload.map(item => null)
         },
         addLetter(state, action) {
-            state.dashboardResponse.push(action.payload)
+            const index = state.dashboardResponse.indexOf(null)
+            console.log(index, "INDEEEX")
+            if (index === -1) return
+            state.dashboardResponse[index] = action.payload
         },
         changeAdding(state, action) {
             return {

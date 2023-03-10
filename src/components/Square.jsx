@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { removeLetter } from '../reducers/Dashboard';
 import "./styles/square.css"
 
-function Square({letter = ""}) {
+function Square({letter}) {
     const dispatch = useDispatch();
     function handleSquareClick() {
         dispatch(removeLetter())
