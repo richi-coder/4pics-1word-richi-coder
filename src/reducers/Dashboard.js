@@ -14,8 +14,9 @@ const dashboardSlice = createSlice({
         },
         addLetter(state, action) {
             const index = state.dashboardResponse.indexOf(null)
-            if (index === -1) return
-            state.dashboardResponse[index] = action.payload
+            if (index !== -1) {
+                state.dashboardResponse[index] = action.payload
+            }
         },
         changeAdding(state, action) {
             return {

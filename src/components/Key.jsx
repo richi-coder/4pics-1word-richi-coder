@@ -13,12 +13,13 @@ function Key({ letter = null, id }) {
     const dispatch = useDispatch();
 
     const handleKeyClick = () => {
-        //if (answer.add) {
-        //let gameCondition = checkWin(challenge, answer);
-        //dispatch(changeAdding(gameCondition))
+        if (answer.add) {
+        let gameCondition = checkWin(challenge, answer);
+        console.log(gameCondition,"gameee")
+        dispatch(changeAdding(gameCondition))
         dispatch(addLetter({id, letter}))
         dispatch(updatePuzzleNull({letter, id}))
-        //}        
+        }
     }
   
   return (
