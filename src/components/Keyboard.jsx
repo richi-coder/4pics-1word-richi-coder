@@ -19,11 +19,10 @@ function Keyboard() {
     <div className='flex flex-col items-center justify-center m-auto gap-y-2 w-full'>
     <div className='flex items-center justify-center flex-row flex-wrap gap-2 align' style={{width: "50vw"}}>
         {
-            puzzle.map((letter, i) => <Key letter={letter} id={i} />)
+            puzzle.map((letter, i) => <Key key={i} letter={letter} id={i} />)
         }
         
     </div>
- 
     </div>
   )
 }

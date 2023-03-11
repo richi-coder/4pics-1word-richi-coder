@@ -2,7 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     add: true,
-    dashboardResponse: []
+    dashboardResponse: [],
+    win: false,
+    correctAnswer: "",
+    gameCondition: "starting"
 };
 
 const dashboardSlice = createSlice({
@@ -11,6 +14,9 @@ const dashboardSlice = createSlice({
     reducers: {
         initializeDashboard(state, action) {
             state.dashboardResponse = action.payload.map(item => null)
+        },
+        initializeCorrectAnswer(state, action) {
+            state.correctAnswer = action.payload.toLowerCase();
         },
         addLetter(state, action) {
             const index = state.dashboardResponse.indexOf(null)
@@ -26,9 +32,15 @@ const dashboardSlice = createSlice({
         },
         removeLetter(state, action) {
             state.dashboardResponse[action.payload.id] = null
+        },
+        win(state, action) {
+            state.win = state.correctAnswer === state.dashboardResponse.map(item => item ? item.letter : "").join("").toLowerCase()
+        },
+        setGameCondition(state, action) {
+            state.gameCondition = action.payload;
         }
     }
 })
 
-export const { addLetter, removeLetter, changeAdding, initializeDashboard } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition } = dashboardSlice.actions;
 export default dashboardSlice.reducer;

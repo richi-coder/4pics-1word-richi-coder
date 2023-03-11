@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
 function Answer() {
+  const win = useSelector(state => state.answer).win;
   const puzzle = useSelector(state => state.challenge);
   const answer = puzzle.answer;
   const [response, setResponse] = useState("Response");
@@ -15,6 +16,10 @@ function Answer() {
       setCorrect(false)
     }
   }
+  
+  useEffect(() => {
+  }, [win])
+  
 
   return (
     <>
@@ -31,6 +36,7 @@ function Answer() {
     </form>
 
     Gamer Response: <div className='bg-slate-100' style={{color: correct ? "green" : "red"}}>{response}</div>
+    <h2>{win.toString()}</h2>
 
     </>
   )

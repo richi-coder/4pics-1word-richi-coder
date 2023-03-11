@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import checkWin from '../functions/checkWin';
-import { addLetter, changeAdding } from '../reducers/Dashboard';
+import { addLetter, changeAdding, setGameCondition, win } from '../reducers/Dashboard';
 import { updatePuzzleNull } from '../reducers/Puzzle';
 import "./styles/key.css"
 
@@ -15,17 +15,22 @@ function Key({ letter = null, id }) {
     const handleKeyClick = () => {
         if (answer.add) {
         let gameCondition = checkWin(challenge, answer);
-        console.log(gameCondition,"gameee")
         dispatch(changeAdding(gameCondition))
         dispatch(addLetter({id, letter}))
         dispatch(updatePuzzleNull({letter, id}))
+        dispatch(win())
+        dispatch(setGameCondition("playing"))
         }
     }
+
+    useEffect(() => {
+    }, [])
+    
   
   return (
     <button 
     disabled={letter ? false : true}
-    id={id}
+    key={id}
     style={{visibility: letter ? "visible" : "hidden"}} 
     onClick={() => handleKeyClick(letter)}
     className='key'>{letter}</button>
