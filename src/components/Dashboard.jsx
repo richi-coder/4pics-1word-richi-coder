@@ -5,6 +5,7 @@ import Square from './Square';
 
 function Dashboard() {
     const dispatch = useDispatch();
+    const gameCondition = useSelector(state => state.answer).gameCondition;
     const challenge = useSelector(state => state.challenge);
     const testing = useSelector(state => state.answer).dashboardResponse;
     const win = useSelector(state => state.answer).win;
@@ -26,7 +27,7 @@ function Dashboard() {
     
 
     return (
-    <div className={win ? 'flex flex-row gap-x-2 m-auto text-green-500' : "flex flex-row gap-x-2 m-auto"}>
+    <div className={gameCondition === "started" ? 'flex flex-row gap-x-2 m-auto text-white-500' : gameCondition === "incorrect" ? 'flex flex-row gap-x-2 m-auto text-red-500' : gameCondition === "playing" ? 'flex flex-row gap-x-2 m-auto text-blue-500' :  "flex flex-row gap-x-2 m-auto text-green-500"}>
         {
             answer.map((letter,i) => 
                 <Square key={i} element={testing[i]} dashPos={i} />
