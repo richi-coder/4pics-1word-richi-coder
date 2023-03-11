@@ -1,7 +1,7 @@
 function Image({url}) {
   return (
     <>
-    <img src={url} alt="" className="w-100" />
+    <img src={url} alt="test" width="50%" className='aspect-square' />
     </>
   )
 }

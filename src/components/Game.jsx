@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import checkWin from "../functions/checkWin"
 import { changeAdding } from "../reducers/Dashboard"
+import GamerInput from "./GamerInput"
 
 function Game() {
   const dispatch = useDispatch();
@@ -14,13 +15,11 @@ function Game() {
  
   
   return (
-    <>
-    <div className="w-full">REACT GAME!</div>
+    <div className="h-screen w-screen bg-gray-900 flex flex-row items-center">
     <ImageContainer />
-    <Dashboard />
-    <Keyboard />
-    <Answer />
-    </>
+    <GamerInput />
+    {/* <Answer /> */}
+    </div>
   )
 }
 

@@ -13,10 +13,6 @@ function App() {
             answer: Dashboard,
         }
     })
-
-    useEffect(() => {
-      window.scrollTo(0,1500)
-    }, [])
     
   return (
     <Provider store={store}>
