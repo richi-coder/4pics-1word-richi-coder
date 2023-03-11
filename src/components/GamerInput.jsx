@@ -1,9 +1,10 @@
 import Dashboard from './Dashboard'
 import Keyboard from './Keyboard'
+import "./styles/gamerinput.css"
 
 function GamerInput() {
   return (
-    <div style={{border: "1px solid white"}} className="w-1/2 aspect-square flex flex-col">
+    <div className="gamer-input aspect-square flex flex-col justify-around">
         <Dashboard />
         <Keyboard />
     </div>

@@ -1,0 +1,26 @@
+.game {
+    align-items: center;
+    justify-content: space-around;
+    height: 95vh;
+    padding-bottom: calc(100vh - 92vh);
+}
+
+:root {
+    --height: 98vh;
+}
+
+@media only screen and (min-aspect-ratio: 1.5) {
+    .game {
+        flex-direction: row;
+        height: var(--height);
+        padding-bottom: 3vh;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1.5) {
+    .game {
+        flex-direction: column;
+        height: var(--height);
+        padding-bottom: calc(100vh - var(--height));
+    }
+}

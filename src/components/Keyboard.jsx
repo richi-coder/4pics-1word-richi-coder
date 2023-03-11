@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createPuzzle } from '../reducers/Puzzle';
 import Key from './Key'
+import "./styles/keyboard.css"
 
 function Keyboard() {
     const dispatch = useDispatch();
@@ -16,13 +17,13 @@ function Keyboard() {
     
 
   return (
-    <div className='flex flex-col items-center justify-center m-auto gap-y-2 w-full'>
-    <div className='flex items-center justify-center flex-row flex-wrap gap-2 align' style={{width: "50vw"}}>
-        {
-            puzzle.map((letter, i) => <Key key={i} letter={letter} id={i} />)
-        }
-        
-    </div>
+    <div className='keyboard-container flex flex-col m-auto w-full h-2/3'>
+      <div className='keyboard flex items-center justify-center flex-row flex-wrap w-full'>
+          {
+              puzzle.map((letter, i) => <Key key={i} letter={letter} id={i} />)
+          }
+          
+      </div>
     </div>
   )
 }

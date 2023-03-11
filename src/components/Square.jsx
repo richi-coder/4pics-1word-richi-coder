@@ -23,7 +23,7 @@ function Square(props) {
     <button
     type='button'
     onClick={() => handleSquareClick()}
-    className='square'>{element ? element.letter : ""}</button>
+    className='square aspect-square'>{element ? element.letter : ""}</button>
   )
 }
 

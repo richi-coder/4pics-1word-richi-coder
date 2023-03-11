@@ -1,0 +1,15 @@
+.gamer-input {
+    width: 100%;
+}
+
+@media only screen and (min-aspect-ratio: 1.5) {
+    .gamer-input {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1.5) {
+    .gamer-input {
+        width: 100%;
+    }
+}

@@ -33,7 +33,7 @@ function Key({ letter = null, id }) {
     key={id}
     style={{visibility: letter ? "visible" : "hidden"}} 
     onClick={() => handleKeyClick(letter)}
-    className='key'>{letter}</button>
+    className='key aspect-square'>{letter}</button>
   )
 }
 

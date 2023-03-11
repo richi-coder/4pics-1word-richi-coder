@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { initializeCorrectAnswer, initializeDashboard, setGameCondition } from '../reducers/Dashboard';
 import Square from './Square';
+import "./styles/dashboard.css"
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function Dashboard() {
     const testing = useSelector(state => state.answer).dashboardResponse;
     const win = useSelector(state => state.answer).win;
     const answer = challenge.answer.split("");
+    const dashboardStyle = "dashboard h-1/3 flex flex-row items-end justify-center"
 
     useEffect(() => {
         if (testing.length === 0) {
@@ -27,7 +29,7 @@ function Dashboard() {
     
 
     return (
-    <div className={gameCondition === "started" ? 'flex flex-row gap-x-2 m-auto text-white-500' : gameCondition === "incorrect" ? 'flex flex-row gap-x-2 m-auto text-red-500' : gameCondition === "playing" ? 'flex flex-row gap-x-2 m-auto text-blue-500' :  "flex flex-row gap-x-2 m-auto text-green-500"}>
+    <div className={gameCondition === "started" ? `${dashboardStyle} text-white-500` : gameCondition === "incorrect" ? `${dashboardStyle} text-red-500` : gameCondition === "playing" ? `${dashboardStyle} text-blue-500` :  `${dashboardStyle} text-green-500`}>
         {
             answer.map((letter,i) => 
                 <Square key={i} element={testing[i]} dashPos={i} />

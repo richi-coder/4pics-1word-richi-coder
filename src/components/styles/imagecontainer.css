@@ -1,0 +1,14 @@
+@media only screen and (min-aspect-ratio: 1.5) {
+    .image-container {
+        border: 1px solid red;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1.5) {
+    .image-container {
+        border: 1px solid white;
+        width: 90%;
+        max-width: 500px;
+    }
+}
