@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import * as reduxToolkit from "@reduxjs/toolkit";
+const { createSlice } = reduxToolkit.default ?? reduxToolkit;
 
 const initialState = {
     number: 2,
