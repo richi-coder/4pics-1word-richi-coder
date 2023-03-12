@@ -1,3 +1,32 @@
+.incorrect {
+    box-shadow: 0 0 0.5rem red;
+    color: red;
+    animation: incorrect 0.15s linear 5;
+}
+@keyframes incorrect {
+    50% {transform: translate(0.5rem, 0);}
+}
+
+.playing {
+    box-shadow: 0 0 0.5rem white;
+    color: white;
+}
+
+.starting {
+    box-shadow: 0 0 0.5rem yellow;
+    color: white;
+}
+
+.started {
+    box-shadow: 0 0 0.5rem rgb(114, 169, 214);
+    color: white;
+}
+
+.winner {
+    box-shadow: 0 0 0.5rem rgb(67, 190, 67);
+    color: rgb(67, 190, 67);
+}
+
 button.square {
     display: flex;
     flex-direction: column;
@@ -6,7 +35,7 @@ button.square {
     background-color: black;
     width: 9%;
     border-radius: 10%;
-    box-shadow: 0px 0px 7px white;
+    /* box-shadow: 0px 0px 7px white; */
     text-align: center;
     margin: 0;
     padding: 0;

@@ -14,6 +14,8 @@ function Key({ letter = null, id }) {
 
     const handleKeyClick = () => {
         if (answer.add) {
+        let audio = document.getElementById("audio");
+        audio.play();
         let gameCondition = checkWin(challenge, answer);
         dispatch(changeAdding(gameCondition))
         dispatch(addLetter({id, letter}))

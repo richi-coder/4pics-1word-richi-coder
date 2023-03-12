@@ -1,0 +1,104 @@
+:root {
+    --turn: 360deg
+}
+
+.winner-animation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 20;
+    background-color: transparent;
+    overflow: hidden;
+}
+.animation-element {
+    position: absolute;
+    top: 70%;
+    right: -250%;
+    background-color: transparent;
+    width: 2500px;
+    transform-origin: top center;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 50px solid rgba(100,200,100,0.5); 
+    animation: show 1s ease-in-out 1;
+}
+@keyframes show {
+    0% {opacity: 0;}
+}
+
+@keyframes rotation {
+    50% {transform: rotate(1turn);}
+}
+.animation-element:nth-child(1) {
+    transform: rotate(0deg);
+    animation: rotation1 7s linear infinite;
+}
+@keyframes rotation1 {
+    100% {transform: rotate(360deg);}
+}
+.animation-element:nth-child(2) {
+    transform: rotate(36deg);
+    animation: rotation2 7s linear infinite;
+}
+@keyframes rotation2 {
+    100% {transform: rotate(396deg);}
+}
+.animation-element:nth-child(3) {
+    transform: rotate(72deg);
+    animation: rotation3 7s linear infinite;
+}
+@keyframes rotation3 {
+    100% {transform: rotate(432deg);}
+}
+.animation-element:nth-child(4) {
+    transform: rotate(108deg);
+    animation: rotation4 7s linear infinite;
+}
+@keyframes rotation4 {
+    100% {transform: rotate(468deg);}
+}
+.animation-element:nth-child(5) {
+    transform: rotate(144deg);
+    animation: rotation5 7s linear infinite;
+}
+@keyframes rotation5 {
+    100% {transform: rotate(504deg);}
+}
+.animation-element:nth-child(6) {
+    transform: rotate(180deg);
+    animation: rotation6 7s linear infinite;
+}
+@keyframes rotation6 {
+    100% {transform: rotate(540deg);}
+}
+.animation-element:nth-child(7) {
+    transform: rotate(216deg);
+    animation: rotation7 7s linear infinite;
+}
+@keyframes rotation7 {
+    100% {transform: rotate(576deg);}
+}
+.animation-element:nth-child(8) {
+    transform: rotate(252deg);
+    animation: rotation8 7s linear infinite;
+}
+@keyframes rotation8 {
+    100% {transform: rotate(612deg);}
+}
+.animation-element:nth-child(9) {
+    transform: rotate(288deg);
+    animation: rotation9 7s linear infinite;
+}
+@keyframes rotation9 {
+    100% {transform: rotate(648deg);}
+}
+.animation-element:nth-child(10) {
+    transform: rotate(324deg);
+    animation: rotation10 7s linear infinite;
+}
+@keyframes rotation10 {
+    100% {transform: rotate(684deg);}
+}

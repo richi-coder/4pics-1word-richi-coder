@@ -1,0 +1,7 @@
+.winner-interface {
+    background-color: rgba(189, 201, 186, 0.7);
+    animation: show 0.5s ease-in-out 1;
+}
+@keyframes show {
+    0% {opacity: 0;}
+}

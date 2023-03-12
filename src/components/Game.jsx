@@ -8,18 +8,16 @@ import checkWin from "../functions/checkWin"
 import { changeAdding } from "../reducers/Dashboard"
 import GamerInput from "./GamerInput"
 import "./styles/game.css"
+import WinnerInterface from "./WinnerInterface"
 
 function Game() {
-  const dispatch = useDispatch();
-  const challenge = useSelector(state => state.challenge);
-  const answer = useSelector(state => state.answer);
- 
   
   return (
     <div className="game w-screen bg-gray-900 flex">
     <ImageContainer />
     <GamerInput />
-    {/* <Answer /> */}
+    <WinnerInterface />
+    
     </div>
   )
 }

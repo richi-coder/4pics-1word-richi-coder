@@ -11,7 +11,7 @@ function Dashboard() {
     const testing = useSelector(state => state.answer).dashboardResponse;
     const win = useSelector(state => state.answer).win;
     const answer = challenge.answer.split("");
-    const dashboardStyle = "dashboard h-1/3 flex flex-row items-end justify-center"
+    const dashboardStyle = "dashboard h-1/3 flex flex-row items-end justify-center z-50"
 
     useEffect(() => {
         if (testing.length === 0) {
@@ -24,18 +24,20 @@ function Dashboard() {
         } 
         if (testing.filter(item => item!== null).length === answer.length && win) {
             dispatch(setGameCondition("winner"))
+            let audioWon = document.getElementById("won");
+            audioWon.play();
         }
     }, [testing])
     
 
     return (
-    <div className={gameCondition === "started" ? `${dashboardStyle} text-white-500` : gameCondition === "incorrect" ? `${dashboardStyle} text-red-500` : gameCondition === "playing" ? `${dashboardStyle} text-blue-500` :  `${dashboardStyle} text-green-500`}>
+    <div className={`${dashboardStyle}`}>
         {
             answer.map((letter,i) => 
                 <Square key={i} element={testing[i]} dashPos={i} />
             )
         }
-        
+        <audio id='won' src="src/assets/win.mp3"></audio>
     </div>
   )
 }
