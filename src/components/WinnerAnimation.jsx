@@ -6,7 +6,7 @@ function WinnerAnimation() {
   return (
     <div className='winner-animation'>
         {
-            elements.map(element => <div className='animation-element'></div>)
+            elements.map((element,i) => <div key={i} className='animation-element'></div>)
         }
     </div>
   )

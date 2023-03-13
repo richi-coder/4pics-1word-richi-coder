@@ -24,8 +24,8 @@ function Dashboard() {
         } 
         if (testing.filter(item => item!== null).length === answer.length && win) {
             dispatch(setGameCondition("winner"))
-            let audioWon = document.getElementById("won");
-            audioWon.play();
+            // let audioWon = document.getElementById("won");
+            // audioWon.play();
         }
     }, [testing])
     
@@ -37,7 +37,7 @@ function Dashboard() {
                 <Square key={i} element={testing[i]} dashPos={i} />
             )
         }
-        <audio id='won' src="src/assets/win.mp3"></audio>
+        {/* <audio id='won' src="assets/win.mp3"></audio> */}
     </div>
   )
 }
