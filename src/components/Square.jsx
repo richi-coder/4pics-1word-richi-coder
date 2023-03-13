@@ -14,16 +14,17 @@ function Square(props) {
 
 
     function handleSquareClick() {
-      if (element !== null ) {
+      if (element !== null && gameCondition !== "winner") {
         let audio = document.getElementById("audio");
-      audio.play();
+        audio.play();
         dispatch(removeLetter({
           id: dashPos,
           letter: element.letter
         }))
         dispatch(updatePuzzleFill(element))
-        dispatch(changeAdding(true))}
+        dispatch(changeAdding(true))
         dispatch(setGameCondition("playing"))
+      }
     }
 
     useEffect(() => {

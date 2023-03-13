@@ -1,0 +1,12 @@
+@media only screen and (min-aspect-ratio: 1.5) {
+    .next-button {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1.5) {
+    .next-button {
+        font-size: 5rem;
+        aspect-ratio: 3 / 2;
+    }
+}

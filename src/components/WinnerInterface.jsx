@@ -7,7 +7,7 @@ import "./styles/winnerinterface.css"
 function WinnerInterface() {
     const win = useSelector(state => state.answer).win;
   return (
-    <div style={{display: win ? "flex" : "none"}} className="winner-interface absolute top-0 right-0 w-screen h-screen z-10">
+    <div style={{display: win ? "flex" : "none"}} className="winner-interface absolute top-0 right-0 w-screen h-screen">
     <WinnerAnimation />
     
         <div className='absolute top-0 right-0 w-screen h-screen flex-col items-center justify-between'>
