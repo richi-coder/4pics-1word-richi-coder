@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPuzzle } from '../reducers/Puzzle';
 import Key from './Key'
 import "./styles/keyboard.css"
+import audioTap from '/public/tap.wav'
 
 function Keyboard() {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function Keyboard() {
           {
               puzzle.map((letter, i) => <Key key={i} letter={letter} id={i} />)
           }
-          <audio id='audio' src="tap.wav">
+          <audio id='audio' src="public/tap.wav">
 		      </audio>
       </div>
     </div>

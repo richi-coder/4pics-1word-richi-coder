@@ -1,16 +1,18 @@
 .winner-message {
     text-shadow: 0 0 3rem yellow;
-    text-shadow: 0 0 4rem black;
+    
 }
 
 @media only screen and (min-aspect-ratio: 1.5) {
     .winner-message {
         font-size: 15rem;
+        text-shadow: 0 0 3vh black;
     }
 }
 
 @media only screen and (max-aspect-ratio: 1.5) {
     .winner-message {
         font-size: 5rem;
+        text-shadow: 0 0 2vw black;
     }
 }
