@@ -15,8 +15,8 @@ function Square(props) {
 
     function handleSquareClick() {
       if (element !== null ) {
-      //   let audio = document.getElementById("audio");
-      // audio.play();
+        let audio = document.getElementById("audio");
+      audio.play();
         dispatch(removeLetter({
           id: dashPos,
           letter: element.letter
