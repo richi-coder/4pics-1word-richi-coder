@@ -3,9 +3,9 @@
     animation: showing .2s ease-in 1;
     opacity: 1;
 }
-@keyframes showing {
+/* @keyframes showing {
     0% {opacity: 0;}
-}
+} */
 
 
 @keyframes ldio-dc4a7au00pk-r {

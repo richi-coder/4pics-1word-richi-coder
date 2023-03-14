@@ -6,7 +6,7 @@ const initialState = {
     dashboardResponse: [],
     win: false,
     correctAnswer: "",
-    gameCondition: "starting"
+    gameCondition: "loading"
 };
 
 const dashboardSlice = createSlice({
@@ -17,10 +17,12 @@ const dashboardSlice = createSlice({
             return initialState
         },
         initializeDashboard(state, action) {
-            state.dashboardResponse = action.payload.map(item => null)
-        },
-        initializeCorrectAnswer(state, action) {
-            state.correctAnswer = action.payload.toLowerCase();
+            return {
+                ...state,
+                dashboardResponse: action.payload.arrayResponse.map(item => null),
+                correctAnswer: action.payload.response.toLowerCase()
+            }
+            
         },
         addLetter(state, action) {
             const index = state.dashboardResponse.indexOf(null)

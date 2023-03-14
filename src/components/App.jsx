@@ -1,14 +1,15 @@
-import { Provider } from 'react-redux'
-import store from '../reducers/store'
-import Game from './Game'
+import Game from "./Game";
+import Loader from "./Loader";
+import AppProvider from "./AppProvider";
 
 function App() {
-    
+  
   return (
-    <Provider store={store}>
-        <Game />
-    </Provider>
-  )
+    <AppProvider>
+      <Loader />
+      <Game />
+    </AppProvider>
+  );
 }
 
-export default App
+export default App;

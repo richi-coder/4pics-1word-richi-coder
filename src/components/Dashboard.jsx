@@ -16,9 +16,12 @@ function Dashboard() {
 
     useEffect(() => {
         if (testing.length === 0) {
-        dispatch(initializeDashboard(answer))
-        dispatch(initializeCorrectAnswer(challenge.answer))
-        dispatch(setGameCondition("started"))
+            const initDashboard = {
+                arrayResponse: answer,
+                response: challenge.answer
+            }
+        dispatch(initializeDashboard(initDashboard))
+        // dispatch(setGameCondition("started"))
         } 
         if (testing.filter(item => item !== null).length === answer.length && !win) {
             dispatch(setGameCondition("incorrect"))

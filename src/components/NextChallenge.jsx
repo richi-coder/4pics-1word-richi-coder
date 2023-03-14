@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux"
 import { initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
 import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
-import { queryChallenges } from "../services/firebase";
 import "./styles/nextchallenge.css"
 
 function NextChallenge() {

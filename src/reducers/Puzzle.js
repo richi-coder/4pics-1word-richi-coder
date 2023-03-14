@@ -2,7 +2,7 @@ import * as reduxToolkit from "@reduxjs/toolkit";
 const { createSlice } = reduxToolkit.default ?? reduxToolkit;
 
 const initialState = {
-    number: 2,
+    level: 2,
     imageURL: ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_1.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_2.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_3.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_4.jpg"],
     answer: "ice",
     puzzleString: "RCCEMAEIWTRS",
