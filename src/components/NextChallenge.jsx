@@ -1,28 +1,21 @@
 import { useDispatch } from "react-redux"
 import { initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
 import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
+import { queryChallenges } from "../services/firebase";
 import "./styles/nextchallenge.css"
 
 function NextChallenge() {
   const dispatch = useDispatch();
 
   function goNextChallenge() {
-    dispatch(setGameCondition("loading"))
-
-    setTimeout(() => {
-      const newChallenge = {
-        number: 2,
-        imageURL: ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_2.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_1.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_3.jpg", "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_479_4.jpg"],
-        answer: "hielo",
-        puzzleString: "WEY",
-        puzzle: []}
-
-        dispatch(nextPuzzle(newChallenge))
-        dispatch(resetDashboard())
-    }, 2000);
-
     
+    // dispatch(setGameCondition("loading"))
     
+
+      
+      
+        // dispatch(nextPuzzle(newChallenge))
+        // dispatch(resetDashboard())
     
   }
 
