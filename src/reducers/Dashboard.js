@@ -13,6 +13,9 @@ const dashboardSlice = createSlice({
     name: "answer",
     initialState,
     reducers: {
+        resetDashboard(state, action) {
+            return initialState
+        },
         initializeDashboard(state, action) {
             state.dashboardResponse = action.payload.map(item => null)
         },
@@ -43,5 +46,5 @@ const dashboardSlice = createSlice({
     }
 })
 
-export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard } = dashboardSlice.actions;
 export default dashboardSlice.reducer;

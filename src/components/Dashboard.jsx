@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { initializeCorrectAnswer, initializeDashboard, setGameCondition } from '../reducers/Dashboard';
 import Square from './Square';
 import "./styles/dashboard.css"
-import audioWon from '/public/win.mp3'
+//import audioWon from '/public/win.mp3'
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function Dashboard() {
             let audioWon = document.getElementById("won");
             audioWon.play();
         }
-    }, [testing])
+    }, [testing, challenge.answer])
     
 
     return (
@@ -38,7 +38,7 @@ function Dashboard() {
                 <Square key={i} element={testing[i]} dashPos={i} />
             )
         }
-        <audio id='won' src="public/win.mp3"></audio>
+        <audio id='won' src="win.mp3"></audio>
     </div>
   )
 }

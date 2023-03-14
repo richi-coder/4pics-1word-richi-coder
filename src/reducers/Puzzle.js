@@ -13,6 +13,9 @@ const puzzleSlice = createSlice({
     name: "challenge",
     initialState,
     reducers: {
+        nextPuzzle(state, action) {
+            return action.payload;
+        },
         createPuzzle(state, action) {
             state.puzzle = action.payload;
         },
@@ -25,5 +28,5 @@ const puzzleSlice = createSlice({
     }
 })
 
-export const { createPuzzle, updatePuzzleNull, updatePuzzleFill} = puzzleSlice.actions;
+export const { createPuzzle, updatePuzzleNull, updatePuzzleFill, nextPuzzle} = puzzleSlice.actions;
 export default puzzleSlice.reducer;

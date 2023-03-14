@@ -9,6 +9,7 @@ import { changeAdding } from "../reducers/Dashboard"
 import GamerInput from "./GamerInput"
 import "./styles/game.css"
 import WinnerInterface from "./WinnerInterface"
+import Loader from "./Loader"
 
 function Game() {
   
@@ -17,7 +18,7 @@ function Game() {
     <ImageContainer />
     <GamerInput />
     <WinnerInterface />
-    
+    <Loader />
     </div>
   )
 }
