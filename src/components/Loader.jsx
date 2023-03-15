@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import StartButton from "./StartButton";
 import "./styles/loader.css";
 
 function Loader() {
@@ -6,9 +7,10 @@ function Loader() {
 
   return (
     <div
-      style={{ display: gameCondition == "loading" ? "flex" : "none" }}
+      style={{ display: gameCondition == "loading" || gameCondition == "starting" ? "flex" : "none" }}
       className="loader w-screen h-screen bg-gray-900 z-50 absolute top-0 left-0 flex-col items-center justify-center"
     >
+      {gameCondition === "loading" ?
       <div className="loadingio-spinner-interwind-jdrt4catmfh">
         <div className="ldio-dc4a7au00pk">
           <div>
@@ -25,6 +27,11 @@ function Loader() {
           </div>
         </div>
       </div>
+      : gameCondition === "starting" ?
+      <StartButton />
+      :
+      null
+      }
 
     </div>
   );

@@ -14,5 +14,6 @@
     .keyboard-container {
         align-items: center;
         justify-content: end;
+        padding-bottom: 3vh;
     }
 }

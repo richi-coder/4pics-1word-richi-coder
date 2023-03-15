@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { setGameCondition } from "../reducers/Dashboard";
+import { createPuzzle } from "../reducers/Puzzle";
+import store from "../reducers/store";
+import storage from "./localStorage"
+import jsonChallenge from "./challenges.json"
 
 const firebaseConfig = {
     apiKey: "AIzaSyB_dDUSuO5JfclE0ErBVbaON7tSiwDw3pA",
@@ -20,24 +25,33 @@ const db = getFirestore(app);
 const loadChallenges = async () => {
 
     const querySnapshot =  await getDocs(collection(db, "level-1"));
-    return querySnapshot
-    // let challengesLength = querySnapshot.docs.length
+    let challengesLength = querySnapshot.docs.length
 
-    // let localStorage = [];
+    let challengeStore = [];
 
-    // querySnapshot.forEach((doc, i) => {
-    //     localStorage.push(doc.data())
-    //     console.log(i, challengesLength, "length")
-    //         if (localStorage.length == challengesLength) {
-    //             console.log("completed")
-    //         }
-    //     }
-    // )
+    querySnapshot.forEach((doc) => {
+        challengeStore.push(doc.data())
+            if (challengeStore.length == challengesLength) {
+                let gameData = {
+                    level: 0,
+                    coins: 0,
+                    data: true
+                }
+                storage.setItem("challenges", JSON.stringify(challengeStore))
+                storage.setItem("gameData", JSON.stringify(gameData))
+                store.dispatch(setGameCondition("starting"))
+            }
+        }
+    )
+}
+
+const uploadChallenges = () => {
+    console.log(jsonChallenge)
 }
 
 
 
-// Reading challenges
+// // Reading challenges
 // const loadChallenges = () => {
 
 
@@ -48,11 +62,12 @@ const loadChallenges = async () => {
 //     //     puzzleString: "WORKS",
 //     //     puzzle: []
 //     // }
-//     queryChallenges()
-    
+//     const test = queryChallenges()
+//     return test
 // }
 
 
 export default {
-    loadChallenges
+    loadChallenges,
+    uploadChallenges
 }

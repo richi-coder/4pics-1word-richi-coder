@@ -1,0 +1,58 @@
+{
+    "challenges": {
+        "5": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_4.jpg"],
+            "answer": "wave",
+            "puzzleString": "aeawtsvysbne",
+            "puzzle": []
+        },
+        "6": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_4.jpg"],
+            "answer": "pet",
+            "puzzleString": "gotsgtleapit",
+            "puzzle": []
+        },
+        "7": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_4.jpg"],
+            "answer": "firm",
+            "puzzleString": "mkardirelofw",
+            "puzzle": []
+        },
+        "8": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_4.jpg"],
+            "answer": "horse",
+            "puzzleString": "eidorwxhsrha",
+            "puzzle": []
+        },
+        "9": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_4.jpg"],
+            "answer": "root",
+            "puzzleString": "oqtuhoaetrse",
+            "puzzle": []
+        },
+        "10": {
+            "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_1.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_2.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_3.jpg",
+                        "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_4.jpg"],
+            "answer": "bark",
+            "puzzleString": "aedkvsrlgboa",
+            "puzzle": []
+        }
+    }
+}

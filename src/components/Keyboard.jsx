@@ -14,6 +14,7 @@ function Keyboard() {
     useEffect(() => {
         //let puzzleToSave = challengePuzzle.map((letter, i) => ({id: i, letter}))
         dispatch(createPuzzle(challengePuzzle))
+        console.log("keyboard")
         //alert("works")
     }, [readChallenge.puzzleString])
     

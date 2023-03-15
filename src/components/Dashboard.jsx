@@ -21,7 +21,7 @@ function Dashboard() {
                 response: challenge.answer
             }
         dispatch(initializeDashboard(initDashboard))
-        // dispatch(setGameCondition("started"))
+        console.log("dashboard")
         } 
         if (testing.filter(item => item !== null).length === answer.length && !win) {
             dispatch(setGameCondition("incorrect"))

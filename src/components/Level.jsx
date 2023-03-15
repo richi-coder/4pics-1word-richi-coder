@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux"
+import React from 'react'
+import { useSelector } from 'react-redux'
+import "./styles/level.css"
 
 function Level() {
     const level = useSelector(state => state.challenge).level;
   return (
-    <div className='text-white'>{level}</div>
+    <div className='level text-white select-none w-1/4'>{level}</div>
   )
 }
 

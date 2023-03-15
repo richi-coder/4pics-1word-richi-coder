@@ -2,19 +2,32 @@ import { useDispatch } from "react-redux"
 import { initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
 import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
 import "./styles/nextchallenge.css"
+import storage from "../services/localStorage"
 
 function NextChallenge() {
   const dispatch = useDispatch();
 
   function goNextChallenge() {
-    
-    // dispatch(setGameCondition("loading"))
-    
+    //dispatch(setGameCondition("loading"))
+    let storeChallenge = storage.getItem("challenges") ? JSON.parse(storage.getItem("challenges")) : null;
+    let gameData = storage.getItem("gameData") ? JSON.parse(storage.getItem("gameData")) : null;
+    gameData.level++;
+    console.log(gameData, "GAME DATA")
 
-      
-      
-        // dispatch(nextPuzzle(newChallenge))
-        // dispatch(resetDashboard())
+    storage.setItem("gameData", JSON.stringify(gameData))
+
+    dispatch(nextPuzzle(storeChallenge[gameData.level]))
+    dispatch(resetDashboard())
+    
+    //storage.setItem("challenges", JSON.stringify(challengeStore))
+    
+    //storage.setItem("")
+
+    //setTimeout(() => {
+      dispatch(setGameCondition("started"))
+  //}, 1000);
+    
+        
     
   }
 
