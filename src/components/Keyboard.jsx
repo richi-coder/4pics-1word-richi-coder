@@ -8,7 +8,7 @@ import "./styles/keyboard.css"
 function Keyboard() {
     const dispatch = useDispatch();
     const readChallenge = useSelector(state => state.challenge);
-    const challengePuzzle = readChallenge.puzzleString.split("");
+    const challengePuzzle = readChallenge.puzzleString.toUpperCase().split("");
     const puzzle = readChallenge.puzzle;
 
     useEffect(() => {

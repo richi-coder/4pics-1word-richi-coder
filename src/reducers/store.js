@@ -1,5 +1,6 @@
 import * as reduxToolkit from '@reduxjs/toolkit'
 import Dashboard from './Dashboard'
+import ImageLoadReducer from './ImageLoadReducer'
 import ImageReducer from './ImageReducer'
 import Puzzle from './Puzzle'
 
@@ -9,7 +10,8 @@ const store = configureStore({
     reducer: {
         challenge: Puzzle,
         answer: Dashboard,
-        image: ImageReducer
+        image: ImageReducer,
+        imageLoad: ImageLoadReducer
     }
 })
 

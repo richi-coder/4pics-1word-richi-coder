@@ -12,7 +12,7 @@ function Dashboard() {
     const testing = useSelector(state => state.answer).dashboardResponse;
     const win = useSelector(state => state.answer).win;
     const answer = challenge.answer.split("");
-    const dashboardStyle = "dashboard h-1/3 flex flex-row items-end justify-center"
+    const dashboardStyle = "dashboard h-1/3 flex flex-row justify-center"
 
     useEffect(() => {
         if (testing.length === 0) {

@@ -2,7 +2,7 @@ import * as reduxToolkit from "@reduxjs/toolkit";
 const { createSlice } = reduxToolkit.default ?? reduxToolkit;
 
 const initialState = {
-    level: 99999999999999999,
+    level: 99999,
     imageURL: [""],
     answer: "i",
     puzzleString: "i",

@@ -3,12 +3,13 @@ import { initializeDashboard, resetDashboard, setGameCondition } from "../reduce
 import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
 import "./styles/nextchallenge.css"
 import storage from "../services/localStorage"
+import { resetImageLoad } from "../reducers/ImageLoadReducer";
 
 function NextChallenge() {
   const dispatch = useDispatch();
 
   function goNextChallenge() {
-    //dispatch(setGameCondition("loading"))
+    dispatch(setGameCondition("loading"))
     let storeChallenge = storage.getItem("challenges") ? JSON.parse(storage.getItem("challenges")) : null;
     let gameData = storage.getItem("gameData") ? JSON.parse(storage.getItem("gameData")) : null;
     gameData.level++;
@@ -18,13 +19,14 @@ function NextChallenge() {
 
     dispatch(nextPuzzle(storeChallenge[gameData.level]))
     dispatch(resetDashboard())
+    dispatch(resetImageLoad())
     
     //storage.setItem("challenges", JSON.stringify(challengeStore))
     
     //storage.setItem("")
 
     //setTimeout(() => {
-      dispatch(setGameCondition("started"))
+      //dispatch(setGameCondition("started"))
   //}, 1000);
     
         

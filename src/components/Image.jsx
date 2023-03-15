@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import { imageLoad } from "../reducers/ImageLoadReducer";
 import { selectImage, unselectImage } from "../reducers/ImageReducer";
 
 function Image({url, index}) {
   const imageWidth = useSelector(state => state.image).sizes;
   const imageOpened = useSelector(state => state.image).imageOpened;
   const dispatch = useDispatch();
+
   function expandImage() {
     if (!imageOpened){
       dispatch(selectImage(index))
@@ -13,9 +15,13 @@ function Image({url, index}) {
     }
   } 
 
+  function fullyLoad() {
+    dispatch(imageLoad(index))
+    console.log(index, "image load")
+  }
 
   return (
-    <img style={{position: "relative"}} onClick={expandImage} src={url} alt="test" width={imageWidth[index]} className='aspect-square cursor-pointer select-none' />
+    <img onLoad={fullyLoad} style={{position: "relative"}} onClick={expandImage} src={url} alt="test" width={imageWidth[index]} className='aspect-square cursor-pointer select-none' />
   )
 }
 

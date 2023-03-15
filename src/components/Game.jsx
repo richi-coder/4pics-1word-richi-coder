@@ -18,6 +18,9 @@ function Game() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // HELPERS
+    // window.localStorage.removeItem("challenges")
+    // window.localStorage.removeItem("gameData")
     let gameData = storage.getItem("gameData")
       ? JSON.parse(storage.getItem("gameData"))
       : null;
