@@ -1,4 +1,5 @@
 import * as reduxToolkit from "@reduxjs/toolkit";
+import storage from "../services/localStorage";
 const { createSlice } = reduxToolkit.default ?? reduxToolkit;
 
 const initialState = {
@@ -6,7 +7,8 @@ const initialState = {
     dashboardResponse: [],
     win: false,
     correctAnswer: "",
-    gameCondition: "loading"
+    gameCondition: "loading",
+    coins: 0
 };
 
 const dashboardSlice = createSlice({
@@ -44,9 +46,12 @@ const dashboardSlice = createSlice({
         },
         setGameCondition(state, action) {
             state.gameCondition = action.payload;
+        },
+        addCoins(state, action) {
+            state.coins = JSON.parse(storage.getItem("gameData")).coins
         }
     }
 })
 
-export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard, addCoins } = dashboardSlice.actions;
 export default dashboardSlice.reducer;

@@ -30,3 +30,8 @@ button:active {
 button:visited {
     background-color: initial;
 }
+
+button.key:focus {
+    transform: scale(1.05,1.05);
+    border: 1vh solid white;
+}

@@ -1,0 +1,27 @@
+.coin-number {
+    padding: 0;
+    margin: 0;
+    height: 50%;
+}
+
+@media only screen and (min-aspect-ratio: 1.5) {
+    .coin-image {
+        width: 7vh;
+        height: 7vh;
+    }
+    .coin-number {
+        font-size: 7vh;
+        margin-top: -2vh;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 1.5) {
+    .coin-image {
+        width: 5vw;
+        height: 5vw;
+    }
+    .coin-number {
+        font-size: 6vw;
+        margin-top: -2vw;
+    }
+}

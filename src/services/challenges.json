@@ -1,6 +1,7 @@
 {
-    "challenges": {
-        "5": {
+    "challenges": [
+        {
+            "level": 5,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_143_3.jpg",
@@ -9,7 +10,8 @@
             "puzzleString": "aeawtsvysbne",
             "puzzle": []
         },
-        "6": {
+        {
+            "level": 6,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2488_3.jpg",
@@ -18,7 +20,8 @@
             "puzzleString": "gotsgtleapit",
             "puzzle": []
         },
-        "7": {
+        {
+            "level": 7,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2493_3.jpg",
@@ -27,7 +30,8 @@
             "puzzleString": "mkardirelofw",
             "puzzle": []
         },
-        "8": {
+        {
+            "level": 8,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2417_3.jpg",
@@ -36,7 +40,8 @@
             "puzzleString": "eidorwxhsrha",
             "puzzle": []
         },
-        "9": {
+        {
+            "level": 9,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_2520_3.jpg",
@@ -45,7 +50,8 @@
             "puzzleString": "oqtuhoaetrse",
             "puzzle": []
         },
-        "10": {
+            {
+            "level": 10,
             "imageURL": ["https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_1.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_2.jpg",
                         "https://www.scrabblewordsolver.com/storage/cheats/lotum/images/_436_3.jpg",
@@ -54,5 +60,5 @@
             "puzzleString": "aedkvsrlgboa",
             "puzzle": []
         }
-    }
+    ]
 }

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, setDoc, doc, orderBy, query, getDoc } from "firebase/firestore";
 import { setGameCondition } from "../reducers/Dashboard";
 import { createPuzzle } from "../reducers/Puzzle";
 import store from "../reducers/store";
@@ -23,8 +23,8 @@ const db = getFirestore(app);
 
 
 const loadChallenges = async () => {
-
-    const querySnapshot =  await getDocs(collection(db, "level-1"));
+    const challengesCollection = collection(db, "level-1")
+    const querySnapshot =  await getDocs(query(challengesCollection, orderBy("level", "asc")));
     let challengesLength = querySnapshot.docs.length
 
     let challengeStore = [];
@@ -45,8 +45,20 @@ const loadChallenges = async () => {
     )
 }
 
+// BOTH FUNCTIONS TO UPLOAD CHALLENGES TO FIREBASE
+
+// Second here
+const uploadToFirebase = async(element) => {
+    await setDoc(doc(db, "level-1", `number-${element.level}`), element)
+    console.log(element.level, "WORKING!")
+}
+
+
+// First here (this function will be used for uploading from StartButton.jsx)
 const uploadChallenges = () => {
-    console.log(jsonChallenge)
+    jsonChallenge.challenges.forEach(element => {
+        uploadToFirebase(element)
+    })
 }
 
 

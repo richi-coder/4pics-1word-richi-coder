@@ -32,7 +32,7 @@ function Loader() {
       :
       null
       }
-
+      <audio id="start-sound" src="startButton.wav"></audio>
     </div>
   );
 }

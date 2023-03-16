@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { initializeCorrectAnswer, initializeDashboard, setGameCondition } from '../reducers/Dashboard';
+import storage from '../services/localStorage';
 import Square from './Square';
 import "./styles/dashboard.css"
 //import audioWon from '/public/win.mp3'
@@ -24,12 +25,17 @@ function Dashboard() {
         console.log("dashboard")
         } 
         if (testing.filter(item => item !== null).length === answer.length && !win) {
+            let incorrectAudio = document.querySelector("#wrong")
+            incorrectAudio.play()
             dispatch(setGameCondition("incorrect"))
         } 
         if (testing.filter(item => item!== null).length === answer.length && win) {
-            dispatch(setGameCondition("winner"))
             let audioWon = document.getElementById("won");
             audioWon.play();
+            let gameData = JSON.parse(storage.getItem("gameData"))
+            gameData.coins = gameData.coins + 5;
+            storage.setItem("gameData", JSON.stringify(gameData))
+            dispatch(setGameCondition("winner"))
         }
     }, [testing, challenge.answer])
     
@@ -42,6 +48,7 @@ function Dashboard() {
             )
         }
         <audio id='won' src="win.mp3"></audio>
+        <audio id='wrong' src="wrong.mp3"></audio>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
+import { addCoins, initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
 import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
 import "./styles/nextchallenge.css"
 import storage from "../services/localStorage"
@@ -9,6 +9,8 @@ function NextChallenge() {
   const dispatch = useDispatch();
 
   function goNextChallenge() {
+    let nextSound = document.querySelector("#next-sound");
+    nextSound.play()
     dispatch(setGameCondition("loading"))
     let storeChallenge = storage.getItem("challenges") ? JSON.parse(storage.getItem("challenges")) : null;
     let gameData = storage.getItem("gameData") ? JSON.parse(storage.getItem("gameData")) : null;
@@ -20,6 +22,7 @@ function NextChallenge() {
     dispatch(nextPuzzle(storeChallenge[gameData.level]))
     dispatch(resetDashboard())
     dispatch(resetImageLoad())
+    dispatch(addCoins())
     
     //storage.setItem("challenges", JSON.stringify(challengeStore))
     

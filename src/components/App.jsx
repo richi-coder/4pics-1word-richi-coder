@@ -1,6 +1,7 @@
 import Game from "./Game";
 import Loader from "./Loader";
 import AppProvider from "./AppProvider";
+import Stage from "./Stage";
 
 function App() {
   
@@ -8,6 +9,7 @@ function App() {
     <AppProvider>
       <Loader />
       <Game />
+      <Stage />
     </AppProvider>
   );
 }

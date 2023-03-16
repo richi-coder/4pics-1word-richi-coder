@@ -31,6 +31,7 @@ function Key({ letter = null, id }) {
   
   return (
     <button 
+    tabIndex={id+1}
     disabled={letter ? false : true}
     key={id}
     style={{visibility: letter ? "visible" : "hidden"}} 

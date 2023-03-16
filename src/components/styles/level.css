@@ -1,6 +1,5 @@
 .level {
     background-color:crimson;
-    
     border-radius: 50%;
     padding: 0;
     margin: 0;
@@ -21,8 +20,8 @@
 
 @media only screen and (max-aspect-ratio: 1.5) {
     .level {
-        width: 10vw;
-        height: 10vw;
+        width: 12vw;
+        height: 12vw;
         font-size: 5vw;
     }
 }

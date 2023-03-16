@@ -13,9 +13,10 @@ function ImageContainer() {
 useEffect(() => {
   //console.log(imageLoad, "imageloadddd")
   if (imageLoad.imageArray.every(image => image !== false)){
-  dispatch(setGameCondition("started"))
-  console.log("fully loaded!")
-}
+  setTimeout(() => {
+    dispatch(setGameCondition("started"))
+  }, 500);
+  }
 }, [imageLoad])
 
 
