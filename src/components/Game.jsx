@@ -5,7 +5,7 @@ import Keyboard from "./Keyboard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import checkWin from "../functions/checkWin";
-import { changeAdding, setGameCondition } from "../reducers/Dashboard";
+import { changeAdding, initializeCoins, setGameCondition } from "../reducers/Dashboard";
 import GamerInput from "./GamerInput";
 import "./styles/game.css";
 import WinnerInterface from "./WinnerInterface";

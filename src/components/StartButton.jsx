@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { resetDashboard, setGameCondition } from '../reducers/Dashboard';
+import { initializeCoins, resetDashboard, setGameCondition } from '../reducers/Dashboard';
 import { createPuzzle, nextPuzzle } from '../reducers/Puzzle';
 import storage from "../services/localStorage"
 import service from "../services/firebase"
@@ -22,12 +22,13 @@ function StartButton() {
             dispatch(nextPuzzle(storeChallenge[gameData.level]))
             dispatch(resetDashboard())
             dispatch(resetImageLoad())
+            dispatch(initializeCoins())
             dispatch(setGameCondition("started"))
-        }, 2000);
+        }, 1400);
     }
 
   return (
-    <button ref={animatedButton} onClick={startGame} className='bg-green-600 py-5 w-1/2 text-3xl border-2 rounded-lg'>START</button>
+    <button ref={animatedButton} onClick={startGame} className='bg-green-500 py-5 w-1/2 text-3xl border-2 rounded-lg'>START</button>
   )
 }
 

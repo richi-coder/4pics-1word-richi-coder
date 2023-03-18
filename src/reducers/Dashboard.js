@@ -47,11 +47,14 @@ const dashboardSlice = createSlice({
         setGameCondition(state, action) {
             state.gameCondition = action.payload;
         },
+        initializeCoins(state, action) {
+            state.coins = JSON.parse(storage.getItem("gameData")).coins
+        },
         addCoins(state, action) {
             state.coins = JSON.parse(storage.getItem("gameData")).coins
         }
     }
 })
 
-export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard, addCoins } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard, addCoins, initializeCoins } = dashboardSlice.actions;
 export default dashboardSlice.reducer;

@@ -1,8 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro';
-import Presentational from '../components/Presentational';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,7 +10,7 @@ import Presentational from '../components/Presentational';
 				>
 				  <div class="mx-auto max-w-3xl text-center">
 					<h1
-					  class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+					  class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-8xl"
 					>
 					  4 Pics 1 Word
 			  
@@ -54,14 +51,18 @@ import Presentational from '../components/Presentational';
 		height: 100%;
 	}
 	.presentation {
-		animation: presentation 1s ease-in-out 1;
+		animation: presentation 2s ease-in-out 1;
 	}
 	@keyframes presentation {
-		0% {opacity: 0; transform: scale(0.5,0.5)}
-		50% {transform: scale(1.2,1.2);}
-		60% {transform: scale(0.9,0.9);}
-		80% {transform: scale(1.1,1.1);}
-		90% {transform: scale(0.95,0.95);}
+		0% {opacity: 0; transform: translate(0,500vh)}
+		20% {opacity: 0; transform: scale(0.5,0.5)}
+		25% {opacity: 0}
+		40% {transform: scale(1.7,1.7);}
+		50% {transform: scale(0.7,0.7);}
+		60% {transform: scale(1.1,1.1);}
+		70% {transform: scale(0.9,0.9);}
+		80% {transform: scale(1.05,1.05);}
+		90% {transform: scale(0.98,0.98);}
 	}
 	h1 {
 		font-size: 3rem;
