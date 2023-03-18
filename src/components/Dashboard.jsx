@@ -47,8 +47,8 @@ function Dashboard() {
                 <Square key={i} element={testing[i]} dashPos={i} />
             )
         }
-        <audio id='won' src="win.mp3"></audio>
-        <audio id='wrong' src="wrong.mp3"></audio>
+        <audio id='won' src="/win.mp3"></audio>
+        <audio id='wrong' src="/wrong.mp3"></audio>
     </div>
   )
 }

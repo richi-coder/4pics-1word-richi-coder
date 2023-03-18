@@ -25,7 +25,7 @@ function Keyboard() {
           {
               puzzle.map((letter, i) => <Key key={i} letter={letter} id={i} />)
           }
-          <audio id='audio' src="tap.wav">
+          <audio id='audio' src="/tap.wav">
 		      </audio>
       </div>
     </div>
