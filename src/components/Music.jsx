@@ -37,8 +37,8 @@ function Music() {
     
   return (
     <>
-    <audio ref={musicRef} id="music" src="music.mp3"></audio>
-    <audio ref={musicRef} id="music2" src="music.mp3"></audio>
+    <audio ref={musicRef} id="music" src="/music.mp3"></audio>
+    <audio ref={musicRef} id="music2" src="/music.mp3"></audio>
     </>
   )
 }

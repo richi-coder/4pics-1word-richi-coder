@@ -8,7 +8,8 @@ const initialState = {
     win: false,
     correctAnswer: "",
     gameCondition: "loading",
-    coins: 0
+    coins: 0,
+    nextButton: false
 };
 
 const dashboardSlice = createSlice({
@@ -52,9 +53,12 @@ const dashboardSlice = createSlice({
         },
         addCoins(state, action) {
             state.coins = JSON.parse(storage.getItem("gameData")).coins
+        },
+        nextButtonChange(state, action) {
+            state.nextButton = action.payload;
         }
     }
 })
 
-export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard, addCoins, initializeCoins } = dashboardSlice.actions;
+export const { addLetter, removeLetter, changeAdding, initializeDashboard, win, initializeCorrectAnswer, setGameCondition, resetDashboard, addCoins, nextButtonChange, initializeCoins } = dashboardSlice.actions;
 export default dashboardSlice.reducer;

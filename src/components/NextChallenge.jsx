@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux"
-import { addCoins, initializeDashboard, resetDashboard, setGameCondition } from "../reducers/Dashboard";
-import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
+import { useDispatch, useSelector } from "react-redux"
+import { addCoins, nextButtonChange, resetDashboard, setGameCondition } from "../reducers/Dashboard";
+import { nextPuzzle } from "../reducers/Puzzle";
 import "./styles/nextchallenge.css"
 import storage from "../services/localStorage"
 import { resetImageLoad } from "../reducers/ImageLoadReducer";
@@ -9,6 +9,7 @@ import { useRef } from "react";
 function NextChallenge() {
   const dispatch = useDispatch();
   const nextAnimated = useRef();
+  const nextButton = useSelector(state => state.answer).nextButton;
 
   function goNextChallenge() {
     let nextSound = document.querySelector("#next-sound");
@@ -21,15 +22,18 @@ function NextChallenge() {
     console.log(gameData, "GAME DATA")
 
     storage.setItem("gameData", JSON.stringify(gameData))
-
+      dispatch(nextButtonChange(true))
+      setTimeout(() => {
+        dispatch(addCoins())
+      }, 2200);
       setTimeout(() => {
         dispatch(setGameCondition("loading"))
         dispatch(nextPuzzle(storeChallenge[gameData.level]))
         dispatch(resetDashboard())
         dispatch(resetImageLoad())
-        dispatch(addCoins())
+        
         nextAnimated.current.classList.remove("nextAnimated")
-  }, 1000);
+  }, 3000);
     
         
     
@@ -38,6 +42,7 @@ function NextChallenge() {
   return (
     <div className='h-1/2 w-full flex flex-col items-center justify-end'>
     <button
+    disabled={nextButton ? true : false}
     ref={nextAnimated}
     onClick={goNextChallenge}
     className='next-button text-white font-bold bg-green-500 mb-10 select-none z-50'>NEXT</button>
