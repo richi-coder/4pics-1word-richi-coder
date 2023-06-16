@@ -1,3 +1,6 @@
 .top {
     background: linear-gradient(0, transparent 20%, black 40%);
+    z-index: 5000;
+    position: relative;
+    user-select: none;
 }
