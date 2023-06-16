@@ -28,7 +28,7 @@ function StartButton() {
     }
 
   return (
-    <button ref={animatedButton} onClick={startGame} className='bg-green-500 py-5 w-1/2 text-3xl border-2 rounded-lg'>START</button>
+    <button ref={animatedButton} onClick={startGame} className='bg-green-500 py-5 w-1/2 text-3xl border-2 rounded-lg text-white font-bold'>START</button>
   )
 }
 
