@@ -11,9 +11,7 @@ function WinnerAnimation() {
 
   useEffect(() => {
     if (nextButton) {
-        setTimeout(() => {
-          setAnimationClass('-top-[50vh] left-[50vw]')
-        }, 1500);
+      setAnimationClass('-top-[50vh] left-[50vw]')
     } else {
       setAnimationClass('top-0 left-0')
     }

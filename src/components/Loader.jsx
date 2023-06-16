@@ -4,17 +4,19 @@ import "./styles/loader.css";
 
 function Loader() {
   const gameCondition = useSelector((state) => state.answer).gameCondition;
+  const puzzle = useSelector(state => state.challenge).puzzle;
 
   return (
     <div
       style={{ display: gameCondition == "loading" || gameCondition == "starting" ? "flex" : "none" }}
       className="loader w-screen h-screen bg-gray-900 z-50 absolute top-0 left-0 flex-col items-center justify-center"
     >
-      {gameCondition === "loading" ?
+      {
+      gameCondition === "loading" || puzzle == undefined ?
       <div className="text-white text-3xl md:text-5xl">
-        LOADING . . .
+        {typeof puzzle == 'object' ? 'LOADING . . .' : 'No more challenges available!'}
       </div>
-      : gameCondition === "starting" ?
+      : gameCondition === "starting" && typeof puzzle == 'object' ?
       <StartButton />
       :
       null

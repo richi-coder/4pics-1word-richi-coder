@@ -1,21 +1,17 @@
 import ImageContainer from "./ImageContainer";
-import Answer from "./Answer";
-import Dashboard from "./Dashboard";
-import Keyboard from "./Keyboard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import checkWin from "../functions/checkWin";
-import { changeAdding, initializeCoins, setGameCondition } from "../reducers/Dashboard";
+import { setGameCondition } from "../reducers/Dashboard";
 import GamerInput from "./GamerInput";
 import "./styles/game.css";
 import WinnerInterface from "./WinnerInterface";
 import Top from "./Top";
 import service from "../services/firebase";
 import storage from "../services/localStorage";
-import { createPuzzle, nextPuzzle } from "../reducers/Puzzle";
 
 function Game() {
   const dispatch = useDispatch();
+  const puzzle = useSelector(state => state.challenge).puzzle;
 
   useEffect(() => {
     // HELPERS
@@ -36,7 +32,9 @@ function Game() {
       storage.setItem("gameData", JSON.stringify(gameData));
       service.loadChallenges();
     } else {
-      dispatch(setGameCondition("starting"));
+      if(puzzle) {
+        dispatch(setGameCondition("starting"));
+      }
     }
   }, []);
 

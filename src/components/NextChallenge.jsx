@@ -25,15 +25,16 @@ function NextChallenge() {
       dispatch(nextButtonChange(true))
       setTimeout(() => {
         dispatch(addCoins())
-      }, 2200);
+      }, 700);
       setTimeout(() => {
         dispatch(setGameCondition("loading"))
+        console.log(storeChallenge[gameData.level], 'ver next puzzle');
         dispatch(nextPuzzle(storeChallenge[gameData.level]))
         dispatch(resetDashboard())
         dispatch(resetImageLoad())
         
         nextAnimated.current.classList.remove("nextAnimated")
-  }, 3000);
+  }, 1200);
     
         
     
