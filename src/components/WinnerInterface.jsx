@@ -14,7 +14,7 @@ function WinnerInterface() {
             <WinnerMessage />
             <NextChallenge />
         </div>
-        <audio id="next-sound" src="nextSound.wav"></audio>
+        <audio id="next-sound" src="/nextSound.wav"></audio>
     </div>
   )
 }
