@@ -39,7 +39,7 @@ function NextChallenge() {
       }
         
         nextAnimated.current.classList.remove("nextAnimated")
-  }, 1200);
+  }, 2200);
     
         
     

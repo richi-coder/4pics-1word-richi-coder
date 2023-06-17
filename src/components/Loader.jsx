@@ -4,7 +4,6 @@ import "./styles/loader.css";
 
 function Loader() {
   const gameCondition = useSelector((state) => state.answer).gameCondition;
-  const puzzle = useSelector(state => state.challenge).puzzle;
 
   return (
     <div

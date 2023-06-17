@@ -29,8 +29,17 @@
 .winnerCoin {
     animation: showup 0.7s ease-in-out 1;
 }
+
 @keyframes showup {
     0% {opacity: 0; transform: scale(0.7);}
     50% {opacity: 1;}
     70% {transform: scale(1.2);}
 }
+/* .winnerNumber {
+    animation: numberShowup 0.7s ease-in-out 1;
+}
+@keyframes numberShowup {   
+    0% {opacity: 0; }
+    80% {opacity: 1;}
+    100% {opacity: 1;}
+} */
