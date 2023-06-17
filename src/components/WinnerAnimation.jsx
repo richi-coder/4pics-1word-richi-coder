@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import WinnerCoin from './WinnerCoin';
 
 function WinnerAnimation() {
-    const [elements, setElements] = useState(new Array(4).fill(null));
+    const [elements, setElements] = useState(new Array(5).fill(null));
     const [animationClass, setAnimationClass] = useState('top-0 left-0')
     const win = useSelector(state => state.answer).win;
     const nextButton = useSelector(state => state.answer).nextButton;

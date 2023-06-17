@@ -29,9 +29,14 @@ function NextChallenge() {
       setTimeout(() => {
         dispatch(setGameCondition("loading"))
         console.log(storeChallenge[gameData.level], 'ver next puzzle');
-        dispatch(nextPuzzle(storeChallenge[gameData.level]))
-        dispatch(resetDashboard())
-        dispatch(resetImageLoad())
+        if (storeChallenge[gameData.level]) {
+          dispatch(nextPuzzle(storeChallenge[gameData.level]))
+          dispatch(resetDashboard())
+          dispatch(resetImageLoad())
+      } else {
+        dispatch(setGameCondition('end'))
+        return
+      }
         
         nextAnimated.current.classList.remove("nextAnimated")
   }, 1200);

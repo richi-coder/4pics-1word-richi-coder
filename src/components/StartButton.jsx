@@ -17,11 +17,17 @@ function StartButton() {
         startAudio.play()
         animatedButton.current.classList.add("startButton")
         setTimeout(() => {
-            dispatch(nextPuzzle(storeChallenge[gameData.level]))
-            dispatch(resetDashboard())
-            dispatch(resetImageLoad())
-            dispatch(initializeCoins())
-            dispatch(setGameCondition("started"))
+          console.log(storeChallenge[gameData.level]);
+            if (storeChallenge[gameData.level]) {
+              dispatch(nextPuzzle(storeChallenge[gameData.level]))
+              dispatch(resetDashboard())
+              dispatch(resetImageLoad())
+              dispatch(initializeCoins())
+              dispatch(setGameCondition("started"))
+            } else {
+              dispatch(setGameCondition('end'))
+              return
+            }
         }, 1400);
     }
 

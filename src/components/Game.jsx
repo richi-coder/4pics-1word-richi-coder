@@ -32,9 +32,7 @@ function Game() {
       storage.setItem("gameData", JSON.stringify(gameData));
       service.loadChallenges();
     } else {
-      if(puzzle) {
-        dispatch(setGameCondition("starting"));
-      }
+      dispatch(setGameCondition("starting"));
     }
   }, []);
 
