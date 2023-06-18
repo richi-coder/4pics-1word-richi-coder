@@ -47,7 +47,7 @@ function WinnerAnimation() {
           {
             elements.map((element,i) => <WinnerCoin key={i} animationClass={animationClass[i]} />)
           }
-          <div className={`winnerNumber text-9xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[750] font-bold text-amber-500 transition-all duration-300 ${numberAnimation}`} style={{textShadow: '0px 0px 15px black'}}>5+</div>
+          <div className={`winnerNumber text-9xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[750] font-bold text-amber-500 transition-all duration-300 ${numberAnimation} select-none`} style={{textShadow: '0px 0px 15px black'}}>5+</div>
           </>
           :
           null

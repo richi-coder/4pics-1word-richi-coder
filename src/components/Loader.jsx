@@ -1,9 +1,16 @@
 import { useSelector } from "react-redux";
 import StartButton from "./StartButton";
+import storage from "../services/localStorage";
 import "./styles/loader.css";
 
 function Loader() {
   const gameCondition = useSelector((state) => state.answer).gameCondition;
+
+  const reStartGame = () => {
+    storage.removeItem('gameData')
+    storage.removeItem('challenges')
+    window.location.replace('/')
+  }
 
   return (
     <div
@@ -18,8 +25,14 @@ function Loader() {
       : gameCondition === "starting" ?
       <StartButton />
       : gameCondition === 'end' ?
-      <div className="text-white text-2xl md:text-3xl text-center">
-        No more challanges available.<br />Please wait for updates!
+      <div className="text-white text-2xl md:text-3xl text-center flex flex-col items-center gap-y-5">
+        <div>No more challanges available.<br />Please wait for updates!</div>
+        <br />
+        <button
+          onClick={reStartGame}
+          className='bg-green-800 rounded hover:text-black px-3 py-2'>
+            RESTART GAME
+        </button>
       </div> :
       null
       }

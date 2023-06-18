@@ -25,7 +25,7 @@ function NextChallenge() {
       dispatch(nextButtonChange(true))
       setTimeout(() => {
         dispatch(addCoins())
-      }, 700);
+      }, 1500);
       setTimeout(() => {
         dispatch(setGameCondition("loading"))
         console.log(storeChallenge[gameData.level], 'ver next puzzle');

@@ -6,7 +6,12 @@ function getItem(name) {
     return window.localStorage.getItem(name)
 }
 
+function removeItem(name) {
+    return window.localStorage.removeItem(name)
+}
+
 export default {
     setItem,
-    getItem
+    getItem,
+    removeItem
 }
