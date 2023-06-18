@@ -19,7 +19,6 @@ function NextChallenge() {
     let storeChallenge = storage.getItem("challenges") ? JSON.parse(storage.getItem("challenges")) : null;
     let gameData = storage.getItem("gameData") ? JSON.parse(storage.getItem("gameData")) : null;
     gameData.level++;
-    console.log(gameData, "GAME DATA")
 
     storage.setItem("gameData", JSON.stringify(gameData))
       dispatch(nextButtonChange(true))

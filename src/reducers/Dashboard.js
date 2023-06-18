@@ -17,7 +17,10 @@ const dashboardSlice = createSlice({
     initialState,
     reducers: {
         resetDashboard(state, action) {
-            return initialState
+            return {
+                ...initialState,
+                coins: state.coins
+            }
         },
         initializeDashboard(state, action) {
             return {
